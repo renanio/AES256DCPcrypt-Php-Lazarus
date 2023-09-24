@@ -1,0 +1,66 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 510
+  Height = 330
+  Top = 195
+  Width = 547
+  Caption = 'Criptografia AES-HMAC-SHA-256'
+  ClientHeight = 330
+  ClientWidth = 547
+  DesignTimePPI = 120
+  OnCreate = FormCreate
+  LCLVersion = '2.2.6.0'
+  object edtDecrypt: TEdit
+    Left = 32
+    Height = 28
+    Top = 32
+    Width = 488
+    TabOrder = 0
+  end
+  object btnDecrypt: TButton
+    Left = 224
+    Height = 31
+    Top = 136
+    Width = 94
+    Caption = 'Decrypt'
+    OnClick = btnDecryptClick
+    TabOrder = 1
+  end
+  object memoDecrypted: TMemo
+    Left = 32
+    Height = 113
+    Top = 200
+    Width = 488
+    TabOrder = 2
+  end
+  object labelTexto: TLabel
+    Left = 32
+    Height = 20
+    Top = 8
+    Width = 36
+    Caption = 'Texto'
+    ParentColor = False
+  end
+  object edtDecryptPassword: TEdit
+    Left = 32
+    Height = 28
+    Top = 96
+    Width = 488
+    TabOrder = 3
+  end
+  object labelSenha: TLabel
+    Left = 32
+    Height = 20
+    Top = 72
+    Width = 40
+    Caption = 'Senha'
+    ParentColor = False
+  end
+  object labelDecifrar: TLabel
+    Left = 32
+    Height = 20
+    Top = 176
+    Width = 101
+    Caption = 'Texto Decifado'
+    ParentColor = False
+  end
+end
