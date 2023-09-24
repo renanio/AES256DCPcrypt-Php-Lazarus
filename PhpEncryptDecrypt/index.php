@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Formulário de Cifra e Decifra</title>
+    <title>Formulário de Cifra e Decifra</title>
 </head>
 <style>
 
@@ -22,7 +22,7 @@ a{
 .content{
   width: 500px;
   margin: 0px auto;
-  position: relative;	
+  position: relative;   
 }
 
 h1{
@@ -90,7 +90,7 @@ input {
 input:not([type="checkbox"]){
   width: 95%;
   margin-top: 4px;
-  padding: 10px;	
+  padding: 10px;    
   border: 1px solid #b2b2b2;
   
   -webkit-border-radius: 3px;
@@ -105,13 +105,13 @@ input:not([type="checkbox"]){
 
 input[type="submit"]{
   width: 50%!important;
-  cursor: pointer;	
+  cursor: pointer;  
   background: #3d9db3;
   padding: 8px 5px;
   color: #fff;
-  font-size: 20px;	
-  border: 1px solid #fff;	
-  margin-bottom: 10px;	
+  font-size: 20px;  
+  border: 1px solid #fff;   
+  margin-bottom: 10px;  
   text-shadow: 0 1px 1px #333;
   -webkit-border-radius: 5px;
   border-radius: 5px;  
@@ -131,7 +131,7 @@ input[type="submit"]:hover{
 #openssl-encrypt{
   position: absolute;
   top: 0px;
-  width: 88%;	
+  width: 88%;   
   padding: 18px 6% 60px 6%;
   margin: 0 0 35px 0;
   background: rgb(247, 247, 247);
@@ -189,7 +189,7 @@ function encryptAES($plaintext, $key) {
 
 // Função para descriptografar um texto cifrado usando AES
 function decryptAES($ciphertext, $key) {
-	$cipher = "AES-256-CBC";
+    $cipher = "AES-256-CBC";
     
     // $ciphertext (string): O texto cifrado, codificado em Base64
     $ciphertext = base64_decode($ciphertext);
@@ -238,32 +238,32 @@ function decryptAES($ciphertext, $key) {
             <label for="key">Chave</label>
             <input id="key" name="key" value="<?php echo isset($_POST['key']) ? $_POST['key'] : 'B27C54EA1365F1F5692DD89E7A827C82' ?>" required="required" type="text"/>
           </p>
-		  
-			<?php
+          
+            <?php
 
-				if (isset($_POST['encrypt'])) {
-					echo '<textarea class="pre">';
-					$text = $_POST['text'];
-					$key = $_POST['key'];
-					$encrypted = encryptAES($text, $key);
-					echo "Texto cifrado: $encrypted";
-					echo '</textarea>';
-				} elseif (isset($_POST['decrypt'])) {
-					echo '<textarea class="pre">';
-					$text = $_POST['text'];
-					$key = $_POST['key'];
-					$decrypted = decryptAES($text, $key);
-					if (empty($decrypted)) {
-						$decrypted = 'Erro ao decifrar';
-					}
-					echo "Texto decifrado: $decrypted";
-					echo '</textarea>';
-				}
-			?>
+                if (isset($_POST['encrypt'])) {
+                    echo '<textarea class="pre">';
+                    $text = $_POST['text'];
+                    $key = $_POST['key'];
+                    $encrypted = encryptAES($text, $key);
+                    echo "Texto cifrado: $encrypted";
+                    echo '</textarea>';
+                } elseif (isset($_POST['decrypt'])) {
+                    echo '<textarea class="pre">';
+                    $text = $_POST['text'];
+                    $key = $_POST['key'];
+                    $decrypted = decryptAES($text, $key);
+                    if (empty($decrypted)) {
+                        $decrypted = 'Erro ao decifrar';
+                    }
+                    echo "Texto decifrado: $decrypted";
+                    echo '</textarea>';
+                }
+            ?>
           
           <p> 
             <input type="submit" name="encrypt" value="Cifrar"/>
-			<input type="submit" name="decrypt" value="Decifrar"/>			
+            <input type="submit" name="decrypt" value="Decifrar"/>          
           </p>
         </form>
       </div>
